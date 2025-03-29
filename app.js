@@ -116,7 +116,7 @@ app.delete('/api/todos/:id', async (req, res) => {
 
 // 서버 시작
 const PORT = process.env.PORT || 3000;
-app.listen(80, '0.0.0.0', async () => {
+app.listen(PORT, '0.0.0.0', async () => {
   await initializeDatabase();
   console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`);
 });
