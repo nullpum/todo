@@ -20,13 +20,11 @@ const pool = new Pool({
 */
 
 const pool = new Pool({
-  user: process.env.DATABASE_USER,          // PostgreSQL 사용자 이름
-  host: process.env.DATABASE_HOST,          // 호스트
-  database: process.env.DATABASE_NAME,      // 데이터베이스 이름
-  password: process.env.DATABASE_PASSWORD,  // 비밀번호 (실제 사용시 변경 필요)    
-  ssl: 'require',                       // PostgreSQL 포트
+  connectionString: "postgres://koyeb-adm:npg_51OATXpLNhoz@ep-odd-lab-a2t4lk1p.eu-central-1.pg.koyeb.app/koyebdb",
+  ssl: {
+    rejectUnauthorized: false // 필요에 따라 설정
+  }
 });
-
 
 // 데이터베이스 초기화 함수
 async function initializeDatabase() {
